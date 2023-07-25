@@ -20,7 +20,13 @@
     --primary-input: hsl(0, 0%, 52%); /*Dark Grey*/ 
     --primary-background: hsl(0, 0%, 98%); /*Very Light Grey*/
     --primary-elements: hsl(0, 0%, 100%); /* White */
-    font-family: 'Nunito Sans', sans-serif;
+    --fz-16px: 1rem;
+    --fz-14px: 0.875rem;
+    --fw-300: 300;
+    --fw-600: 600;
+    --fw-800: 800;
+    font-size: 16px;
+
 }
 .dark-mode {
     /* Dark Mode colors */
@@ -29,4 +35,6 @@
     --primary-elements: hsl(209, 23%, 22%); /* Dark Blue */
 }
 
-
+header {
+    background-color: var(--primary-elements);
+}
