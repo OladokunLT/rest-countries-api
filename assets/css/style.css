@@ -7,31 +7,12 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
-:root {
-    /*ligth mode colors*/
-    --primary-text: hsl(200, 15%, 8%); /*Very Dark blue*/ 
-    --primary-input: hsl(0, 0%, 52%); /*Dark Grey*/ 
-    --primary-background: hsl(0, 0%, 98%); /*Very Light Grey*/
-    --primary-elements: hsl(0, 0%, 100%); /* White */
-    --fz-16px: 1rem;
-    --fz-14px: 0.875rem;
-    --fw-300: 300;
-    --fw-600: 600;
-    --fw-800: 800;
-    font-size: 16px;
-}
-
-body {
-    color: var(--primary-text);
-    background-color: var(--primary-background);
-    font-size: var(--fz-14px);
-}
 .wrapper {
     width: 100vw;
     min-height: 100vh;
     position: relative;
 }
-header {
+.sm-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -40,28 +21,48 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-inline: 1rem;
+    padding-inline: 4.27%;
+    /* padding-inline: 1rem; */
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06); 
+    font-size: var(--fz-14px);
 }
 
-/* -----for medium to large screen -------*/
-header {
-    /* padding-inline: 5rem; */
-}
-/* ----------------------------------- */
+
 .sm-h1 {
-    font-size: var(--fz-14px);
     font-weight: 800;
     line-height: 1.25rem; /* 142.857% */
+    font-size: var(--fz-14px);
 }
 .sm-mode-btn {
-
+    background: transparent;
+    appearance: none;
+    border: none;
     font-size: 0.75rem;
-    font-style: normal;
     font-weight: 600;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: .5rem;
+    color: var(--primary-text);
+    cursor: pointer;
+}
+.material-symbols-outlined {
+    font-size: 12px;
 }
 
 
+/* -----for medium to large screen -------*/
+@media (width > 425px) {
+    body {
+        /* background: yellow; */
+    }
+    .md-header {
+        padding-inline: 5.5555%;
+    }   
+    .md-h1 {
+        font-size: 1.5rem;
+        line-height: normal;
+    }
+    .md-mode-btn {
+        font-size: var(--fz-16px);
+    }
+}
