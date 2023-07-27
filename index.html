@@ -20,7 +20,7 @@
 </head>
 <body>
     <div class="wrapper ">
-        <header class="sm-header md-header">
+        <header class="sm-header md-header hide">
             <h1 class="sm-h1 md-h1 lg-h1">Where in the world?</h1>
             <button id="mode-btn" class="sm-mode-btn md-mode-btn lg-mode-btn">
                 <span class="material-symbols-outlined" id="mode-icon">
@@ -33,7 +33,32 @@
             </button>
         </header>
         <main>
+            <section class="search-section">
+                <div class="search-bar">
+                    <span class="material-symbols-outlined" id="search-icon">
+                        search
+                    </span>
+                    <input type="search" name="search-term" id="search-term" class="search-term" placeholder="Search for a country">
+                </div>
+                <div class="search-region-wrapper">
+                    <div class="region-tab">
+                        <p>Filter by region</p>
+                        <span class="material-symbols-outlined">
+                            expand_more
+                        </span>
+                    </div>
+                    <div class="region-list">
+                        <p>Africa</p>
+                        <p>America</p>
+                        <p>Asia</p>
+                        <p>Europe</p>
+                        <p>Oceania</p>
+                    </div>
+                </div>
+            </section>
+            <section class="cards">
 
+            </section>
         </main>
     </div>
 
