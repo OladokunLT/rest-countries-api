@@ -15,7 +15,7 @@ modeBtn.addEventListener("click", () => {
 });
 
 async function getData() {
-    const jsonData = await fetch("../data.json")
+    const jsonData = await fetch(`../data.json`)
     const res = await jsonData.json()
     console.log(res)
     res.forEach(e => {
@@ -36,8 +36,8 @@ function handleShowCountry(ctrData) {
     <div class="demographic-wrapper">
         <h2 class="country-name">${ctrData.name}</h2>
         <p><strong>Population:</strong> <span>${ctrData.population}</span></p>
-        <p><strong>Population:</strong> <span>${ctrData.region}</span></p>
-        <p><strong>Population:</strong> <span> ${ctrData.capital} </span></p>
+        <p><strong>Region:</strong> <span>${ctrData.region}</span></p>
+        <p><strong>Capital:</strong> <span> ${ctrData.capital} </span></p>
     </div>
     `
     countries.append(countryCard)
