@@ -18,19 +18,15 @@
 .sm-header {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
     height: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-inline: 4.27%;
-    /* padding-inline: 1rem; */
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06); 
     font-size: var(--fz-14px);
 }
-
-
 .sm-h1 {
     font-weight: 800;
     line-height: 1.25rem; /* 142.857% */
@@ -55,6 +51,7 @@
     flex-direction: column;
     padding-inline: 1rem;
     row-gap: 2.5rem;
+    margin-block-end: 2rem;
 }
 .region-tab,
 .search-bar {
@@ -69,7 +66,7 @@
 .search-term {
     color: var(--primary-text);
     font-family: Nunito Sans;
-    font-size: 0.75rem;
+    font-size: var(--fz-14px);
     line-height: 1.25rem; /* 166.667% */
     background: transparent;
     outline: none;
@@ -78,7 +75,7 @@
 }
 input::placeholder {
     color: var(--primary-text);
-    opacity: 0.7;
+    opacity: 1;
 }
 .search-region-wrapper {
     width: 12.5rem;
@@ -87,9 +84,7 @@ input::placeholder {
     padding-inline: 1.5rem;
     margin-block-end: 0.25rem;
     cursor: pointer;
-    /* display: flex; */
     justify-content: space-between;
-    /* align-items: center; */
 } 
 
 .region-list {
@@ -102,7 +97,37 @@ input::placeholder {
     line-height: 1.2rem; /* 133.333% */
 }
 
-
+/* -------- Countries card section ------------ */
+.countries {
+    display: flex;
+    justify-content: center;
+    row-gap: 3rem;
+    column-gap: 3rem;
+    flex-wrap: wrap;
+    padding-block-end: 4.06rem;    
+} 
+.country-card {
+    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
+    width: 16.5rem;
+}
+.flag-wrapper {
+    height: 11rem;
+    width: 100%;
+    align-items: start;
+}
+.flag-wrapper img {
+    border-top-right-radius: 0.3125rem;
+    border-top-left-radius: 0.3125rem;
+}
+.demographic-wrapper {
+    padding-block-start: 1.5rem;
+    padding-inline-start: 1.5rem;
+    padding-block-end: 2.88rem;
+    line-height: 1.5;
+}
+.country-name {
+    margin-bottom: 1rem;
+}
 
 
 /* -----for medium to large screen -------*/
@@ -118,8 +143,12 @@ input::placeholder {
         font-size: var(--fz-16px);
     }
     
-    /* ---------search section ----------- */
+    /* --------- countries card --------- */
+    .countries {
+        margin-inline: 5.5555%;
+    }     
 }
+
 @media (width > 768px) {
     .search-section {
         padding-inline: 5.5555%;
@@ -127,6 +156,14 @@ input::placeholder {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin-block-end: 3rem;
+    }
+    .search-bar {
+        width: 28rem;
+    }
+    .countries {
+        justify-content: space-between;
+        padding-block-end: 2.81rem;
     }
     
 }
