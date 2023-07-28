@@ -79,6 +79,7 @@ input::placeholder {
 }
 .search-region-wrapper {
     width: 12.5rem;
+    /* position: fixed; */
 }
 .region-tab {
     padding-inline: 1.5rem;
