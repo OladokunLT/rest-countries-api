@@ -63,6 +63,7 @@ Array.from(continent).forEach( (region) => {
                 regName.parentElement.parentElement.parentElement.style.display = "block"
             }
         })
+        region.parentElement.classList.add("hide")
     })
 })
 
