@@ -95,7 +95,11 @@ input::placeholder {
     padding-block: 1rem;
     font-size: 0.75rem;
     font-weight: 400;
-    line-height: 1.2rem; /* 133.333% */
+    line-height: 1.3rem; /* 133.333% */
+}
+.region-list > .continent:hover {
+    background-color: #88222380;
+    cursor: pointer;
 }
 
 /* -------- Countries card section ------------ */

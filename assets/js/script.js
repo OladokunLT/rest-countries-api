@@ -6,17 +6,37 @@ const regionTab = document.querySelector(".region-tab")
 const regionList = document.querySelector(".region-list")
 const continent = document.querySelectorAll(".continent")
 const regionName = document.getElementsByClassName("region-name")
+const searchIcon = document.querySelector("#search-icon")
+const searchTerm = document.querySelector("#search-term")
+const countriesName = document.getElementsByClassName("country-name")
 
-modeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    if (document.body.classList.contains("dark-mode")) {
-        modeIcon.textContent = "light_mode";
-        modeName.textContent = "Light Mode"
-    }else {
-        modeIcon.textContent = "dark_mode";
-        modeName.textContent = "Dark Mode";
-    }
-});
+
+searchTerm.addEventListener("input", ()=>{
+    Array.from(countriesName).forEach((countryName) => {
+        if (countryName.textContent.toLowerCase().includes(searchTerm.value.toLowerCase())) {
+            console.log(countryName.textContent)
+            countryName.parentElement.parentElement.style.display = "block"
+        } else {
+            countryName.parentElement.parentElement.style.display = "none"
+        }
+    })
+})
+
+Array.from(continent).forEach( (region) => {
+    region.addEventListener("click", ()=> {
+        Array.from(regionName).forEach((regName) => {
+            if(regName.textContent == region.textContent) {
+                regName.parentElement.parentElement.parentElement.style.display = "block"
+            } else {
+                regName.parentElement.parentElement.parentElement.style.display = "none"
+            }
+            if (region.textContent == "All") {
+                regName.parentElement.parentElement.parentElement.style.display = "block"
+            }
+        })
+        region.parentElement.classList.add("hide")
+    })
+})
 
 regionTab.addEventListener("click", () => {
     regionList.classList.toggle("hide")
@@ -49,23 +69,17 @@ function handleShowCountry(ctrData) {
     countries.append(countryCard)
 }
 
-Array.from(continent).forEach( (region) => {
-    region.addEventListener("click", ()=> {
-        console.log( region.textContent )
-        Array.from(regionName).forEach((regName) => {
-            console.log(regName.textContent)
-            if(regName.textContent == region.textContent) {
-                regName.parentElement.parentElement.parentElement.style.display = "block"
-            } else {
-                regName.parentElement.parentElement.parentElement.style.display = "none"
-            }
-            if (region.textContent == "All") {
-                regName.parentElement.parentElement.parentElement.style.display = "block"
-            }
-        })
-        region.parentElement.classList.add("hide")
-    })
-})
+modeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    if (document.body.classList.contains("dark-mode")) {
+        modeIcon.textContent = "light_mode";
+        modeName.textContent = "Light Mode"
+    }else {
+        modeIcon.textContent = "dark_mode";
+        modeName.textContent = "Dark Mode";
+    }
+});
+
 
 
 
