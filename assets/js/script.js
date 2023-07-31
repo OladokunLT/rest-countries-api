@@ -9,9 +9,13 @@ const regionName = document.getElementsByClassName("region-name")
 const searchIcon = document.querySelector("#search-icon")
 const searchTerm = document.querySelector("#search-term")
 const countriesName = document.getElementsByClassName("country-name")
+// country modal script
+
+
 
 
 searchTerm.addEventListener("input", ()=>{
+    regionList.classList.add("hide")
     Array.from(countriesName).forEach((countryName) => {
         if (countryName.textContent.toLowerCase().includes(searchTerm.value.toLowerCase())) {
             console.log(countryName.textContent)
@@ -24,6 +28,7 @@ searchTerm.addEventListener("input", ()=>{
 
 Array.from(continent).forEach( (region) => {
     region.addEventListener("click", ()=> {
+        searchTerm.value = "";
         Array.from(regionName).forEach((regName) => {
             if(regName.textContent == region.textContent) {
                 regName.parentElement.parentElement.parentElement.style.display = "block"
@@ -49,7 +54,8 @@ async function getData() {
         handleShowCountry(e);
     }); 
 }
-getData()
+    getData()
+
 
 function handleShowCountry(ctrData) {
     const countryCard = document.createElement("div")
@@ -67,7 +73,58 @@ function handleShowCountry(ctrData) {
     </div>
     `
     countries.append(countryCard)
+
+    countryCard.addEventListener("click", ()=>{
+        handleShowModal(ctrData)
+    })
 }
+
+const countryModal = document.querySelector(".country-modal")
+    function handleShowModal (ctrData){
+    countryModal.classList.toggle("hide");
+
+    countryModal.innerHTML =
+    `
+        <button class="close-country-modal">Back</button>
+
+        <div class="details">
+            <div class="flag">
+                <img src="${ctrData.flag}" alt="">
+            </div>
+
+            <div class="details-text">
+                <h2 class="country-name">${ctrData.name}</h2>
+                <div class="left-right-dtails">
+                    <div class="left-details">
+                        <p><strong>Native Name:</strong> <span>${ctrData.nativeName}</span></p>
+                        <p><strong>Population:</strong> <span>${ctrData.population}</span></p>
+                        <p><strong>Region:</strong> <span>${ctrData.region}</span></p>
+                        <p><strong>Sub Region:</strong> <span>${ctrData.subregion}</span></p>
+                        <p><strong>Capital:</strong> <span>${ctrData.capital}</span></p>
+                    </div>
+                    <div class="right-details">
+                        <p><strong>Top Level Domain:</strong> <span>${ctrData.topLevelDomain}</span></p>
+                        <p><strong>Currencies:</strong> <span>${ctrData.currencies[0].name}</span></p>
+                        <p><strong>Languages:</strong> <span>${ctrData.languages[0].name}</span></p>
+                    </div>
+                </div>
+                <div class="border-countries">
+                    <h5>Border Countries</h5>
+                    <ul id="regionalblocs">                        
+                        <li></li>
+                        <li></li>
+                        <li></li>           
+                    </ul>
+                </div>
+            </div>
+        </div>              
+    `
+    const closeCountryModal = document.querySelector(".close-country-modal")
+    closeCountryModal.addEventListener("click", ()=>{
+        countryModal.classList.toggle("hide")
+    })
+}
+
 
 modeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");

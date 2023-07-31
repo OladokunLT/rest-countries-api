@@ -42,7 +42,7 @@ body {
     --primary-background: hsl(207, 26%, 17%); /*Very Dark Blue*/
     --primary-elements: hsl(209, 23%, 22%); /* Dark Blue */
 }
-
+.country-modal,
 header,
 .search-bar,
 .region-tab, 

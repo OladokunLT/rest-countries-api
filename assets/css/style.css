@@ -134,6 +134,26 @@ input::placeholder {
     margin-bottom: 1rem;
 }
 
+/* Country Modal */
+.country-modal {
+    margin-top: 5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    /* background: yellow; */
+    z-index: 10;
+    overflow-y: scroll;
+    font-size: var(--fz-16px);
+    
+}
+
+.flag {
+    width: 20rem;
+    height: 15rem;
+}
+
+
 
 /* -----for medium to large screen -------*/
 @media (width > 425px) {
@@ -171,4 +191,10 @@ input::placeholder {
         padding-block-end: 2.81rem;
     }
     
+    /* Country Modal */
+
+    /* .flag {
+        width: 34rem;
+        height: 30rem;
+    } */
 }
