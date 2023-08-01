@@ -85,7 +85,12 @@ const countryModal = document.querySelector(".country-modal")
 
     countryModal.innerHTML =
     `
-        <button class="close-country-modal">Back</button>
+        <button class="close-country-modal"> 
+            <span class="material-symbols-outlined">
+                 keyboard_backspace
+            </span>
+            Back
+        </button>
 
         <div class="details">
             <div class="flag">
@@ -94,7 +99,7 @@ const countryModal = document.querySelector(".country-modal")
 
             <div class="details-text">
                 <h2 class="country-name">${ctrData.name}</h2>
-                <div class="left-right-dtails">
+                <div class="left-right-details">
                     <div class="left-details">
                         <p><strong>Native Name:</strong> <span>${ctrData.nativeName}</span></p>
                         <p><strong>Population:</strong> <span>${ctrData.population}</span></p>
