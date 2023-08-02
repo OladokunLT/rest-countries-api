@@ -110,16 +110,14 @@ function handleShowModal (ctrData){
                     </div>
                     <div class="right-details">
                         <p><strong>Top Level Domain:</strong> <span>${ctrData.topLevelDomain}</span></p>
-                        <p><strong>Currencies:</strong> <span>${ctrData.currencies[0].name}</span></p>
-                        <p><strong>Languages:</strong> <span>${ctrData.languages[0].name}</span></p>
+                        <p><strong>Currencies:</strong> <span>${ctrData.currencies.map(e=>e.name)}</span></p>
+                        <p><strong>Languages:</strong> <span>${ctrData.languages.map(e=>e.name)}</span></p>
                     </div>
                 </div>
                 <div class="border-countries">
                     <h5>Border Countries</h5>
-                    <ul id="regionalblocs">                        
-                        <li></li>
-                        <li></li>
-                        <li></li>           
+                    <ul id="regionalblocs"> 
+                    
                     </ul>
                 </div>
             </div>
