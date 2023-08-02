@@ -78,9 +78,9 @@ function handleShowCountry(ctrData) {
         handleShowModal(ctrData)
     })
 }
-
+const searchSection = document.querySelector(".search-section")
 const countryModal = document.querySelector(".country-modal")
-    function handleShowModal (ctrData){
+function handleShowModal (ctrData){
     countryModal.classList.toggle("hide");
 
     countryModal.innerHTML =
@@ -92,11 +92,12 @@ const countryModal = document.querySelector(".country-modal")
             Back
         </button>
 
+        <div class="details-text-wrapper">
         <div class="details">
             <div class="flag">
                 <img src="${ctrData.flag}" alt="">
             </div>
-
+                        
             <div class="details-text">
                 <h2 class="country-name">${ctrData.name}</h2>
                 <div class="left-right-details">
@@ -122,14 +123,14 @@ const countryModal = document.querySelector(".country-modal")
                     </ul>
                 </div>
             </div>
-        </div>              
+        </div> 
+        </div>             
     `
     const closeCountryModal = document.querySelector(".close-country-modal")
     closeCountryModal.addEventListener("click", ()=>{
         countryModal.classList.toggle("hide")
     })
 }
-
 
 modeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");

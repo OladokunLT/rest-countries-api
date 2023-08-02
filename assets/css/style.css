@@ -26,6 +26,7 @@
     padding-inline: 4.27%;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06); 
     font-size: var(--fz-14px);
+    z-index: 1;
 }
 .sm-h1 {
     font-weight: 800;
@@ -44,6 +45,7 @@
     color: var(--primary-text);
     cursor: pointer;
 }
+
 /* ------- Search section ------ */
 .search-section {
     margin-block-start: 6.5rem;
@@ -114,11 +116,17 @@ input::placeholder {
 .country-card {
     box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
     width: 16.5rem;
+    cursor: pointer;
+}
+.country-card:hover {
+    transform: scale(1.02);
+    transition: .5s;
 }
 .flag-wrapper {
     height: 11rem;
     width: 100%;
-    align-items: start;
+    display: flex;
+    align-items: flex-start;
 }
 .flag-wrapper img {
     border-top-right-radius: 0.3125rem;
@@ -136,16 +144,13 @@ input::placeholder {
 
 /* Country Modal */
 .country-modal {
-    margin-top: 5rem;
     position: fixed;
     top: 0;
+    bottom: 0;
     width: 100%;
     height: 100vh;
-    /* background: yellow; */
-    z-index: 10;
     overflow-y: scroll;
-    font-size: var(--fz-16px);
-    
+    font-size: var(--fz-16px); 
 }
  .close-country-modal {
     border: 0;
@@ -153,7 +158,7 @@ input::placeholder {
     justify-content: center;
     gap: 1rem;
     align-items: center;
-    margin: 2.5rem 0 4rem 0;
+    margin: 5rem 0 4rem 1.7rem;
     width: 6.5rem;
     height: 2rem;
     border-radius: 0.125rem;
@@ -161,6 +166,7 @@ input::placeholder {
     color: var(--primary-text);
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.29);
     font-weight: var(--fw-800);
+    cursor: pointer;
  }
 
 .flag {
@@ -174,6 +180,10 @@ input::placeholder {
     /* background: #808080; */
     box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.03);
 }
+.details-text-wrapper {
+    display: grid;
+    place-items: center;
+}
 .left-right-details,
 .details {
     display: flex;
@@ -181,12 +191,20 @@ input::placeholder {
     flex-direction: column;
     gap: 2rem;
 }
+.details-text {
+    --detaills-text-lh: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    line-height: var(--detaills-text-lh);
+}
+
 .left-detals,
 .right-details {
     font-size: 0.875rem;
     font-weight: 300;
-    line-height: 2rem;
 }
+
 
 /* -----for medium to large screen -------*/
 @media (width > 425px) {
@@ -205,6 +223,10 @@ input::placeholder {
     .countries {
         margin-inline: 5.5555%;
     }     
+
+    .close-country-modal {
+        margin-left: 5rem;
+    }
 }
 
 @media (width > 768px) {
@@ -232,6 +254,10 @@ input::placeholder {
         width: 35rem;
         height: 25.0625rem;
     }
+    .details {
+        align-items: center;
+    }
+
     .left-right-details,
     .details {
         display: flex;
@@ -239,7 +265,4 @@ input::placeholder {
         flex-direction: row;
         gap: 2rem;
     }
-    
-    
-
 }
