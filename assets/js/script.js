@@ -116,11 +116,10 @@ function handleShowModal (ctrData){
                     </div>
                 </div>
                 <div class="border-countries">
-                    <h5>Border Countries</h5>
-                    <ul class="regionalblocs"> </ul>
-                  ${ ctrData.borders.map(e=>e).join(", ")} 
-                };
-                    
+                    <h5">Border Countries</h5>
+                    <span class="regionalblocs"> 
+                        ${ ctrData.borders.map(e=>e).join(", ")} 
+                    </span>
                 </div>
             </div>
         </div> 
