@@ -82,6 +82,7 @@ const searchSection = document.querySelector(".search-section")
 const countryModal = document.querySelector(".country-modal")
 function handleShowModal (ctrData){
     countryModal.classList.toggle("hide");
+    let ul = document.querySelector(".regionalblocs")
 
     countryModal.innerHTML =
     `
@@ -110,15 +111,16 @@ function handleShowModal (ctrData){
                     </div>
                     <div class="right-details">
                         <p><strong>Top Level Domain:</strong> <span>${ctrData.topLevelDomain}</span></p>
-                        <p><strong>Currencies:</strong> <span>${ctrData.currencies.map(e=>e.name)}</span></p>
-                        <p><strong>Languages:</strong> <span>${ctrData.languages.map(e=>e.name)}</span></p>
+                        <p><strong>Currencies:</strong> <span>${ctrData.currencies.map(e=>e.name).join(", ")}</span></p>
+                        <p><strong>Languages:</strong> <span>${ctrData.languages.map(e=>e.name).join(", ")}</span></p>
                     </div>
                 </div>
                 <div class="border-countries">
                     <h5>Border Countries</h5>
-                    <ul id="regionalblocs"> 
+                    <ul class="regionalblocs"> </ul>
+                  ${ ctrData.borders.map(e=>e).join(", ")} 
+                };
                     
-                    </ul>
                 </div>
             </div>
         </div> 
